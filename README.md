@@ -5,5 +5,5 @@ Guya Express Xpress Service
 [peridot](http://peridot-php.github.io/)
 
 ```bash
-$ ./vendor/bin/peridot
+$ ./vendor/bin/phpunit app/Xpress/Tests/
 ```
