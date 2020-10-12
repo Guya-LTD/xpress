@@ -1,6 +1,6 @@
 # FROM php:8.0-rc-fpm-alpine AS production
 
-FROM composer:2.0 AS production
+FROM php:8.0.0rc1-alpine AS production
 
 # Create app directory
 ENV WORK_DIR /usr/src/app
