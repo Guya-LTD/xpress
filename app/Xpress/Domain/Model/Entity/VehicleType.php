@@ -31,7 +31,7 @@ use Xpress\Domain\Model\Entity\TraitUser;
  * @version  1.0.0
  */
 
-class Vehicle extends AbstractEntity {
+class VehicleType extends AbstractEntity {
     use TraitTimestamp;
     use TraitUser;
 
