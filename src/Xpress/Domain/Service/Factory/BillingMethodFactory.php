@@ -15,14 +15,12 @@
  * @last modified time: 2020-05-13T04:32:15+03:00
  */
 
-namespace Xpress\Domain\Model\Entity;
+namespace Xpress\Domain\Service\Factory;
 
-use Xpress\Domain\Model\Entity\AbstractEntity;
-use Xpress\Domain\Model\Entity\TraitTimestamp;
-use Xpress\Domain\Model\Entity\TraitUser;
+use Xpress\Domain\Model\Entity\BillingMethod;
 
 /**
- * Class BillingMethodEntity
+ * Class BillingMethodFactory
  * @package Xpress\Domain\Model\Entity
  * @see https://github.com/Simonbelete/guya/tree/develop/xpress
  * @author Simon Belete <simonbelete@gmail.com> 
@@ -31,30 +29,18 @@ use Xpress\Domain\Model\Entity\TraitUser;
  * @version  1.0.0
  */
 
-class BillingMethod extends AbstractEntity {
-    use TraitTimestamp;
-    use TraitUser;
+class BillingMethodFactory {
+    public function createWithCurrentDateTime() {
+        $billingMethod = new BillingMethod();
+        $billingMethod->setCreatedAt(new \DateTime());
 
-    /**
-     * @var string
-     */
-    protected $name;
-
-    /**
-     * @param string $name
-     * @return string
-     */
-    public function setName ( string $name ) : string {
-        $this->name = $name;
-        return $name;
+        return $billingMethod;
     }
 
-    /**
-     * @return string
-     */
-    public function getName () : self {
-        return $this->name;
+    public function createWithUpdatedCurrentDateTime() {
+        $billingMethod = new BillingMethod();
+        $billingMethod->setUpdatedAt(new \DateTime());
+
+        return $billingMethod;
     }
 }
-
-/** EOF */

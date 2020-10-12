@@ -19,10 +19,9 @@ namespace Xpress\Domain\Model\Entity;
 
 use Xpress\Domain\Model\Entity\AbstractEntity;
 use Xpress\Domain\Model\Entity\TraitTimestamp;
-use Xpress\Domain\Model\Entity\TraitUser;
 
 /**
- * Class BillingMethodEntity
+ * Class ShippingEntity
  * @package Xpress\Domain\Model\Entity
  * @see https://github.com/Simonbelete/guya/tree/develop/xpress
  * @author Simon Belete <simonbelete@gmail.com> 
@@ -31,30 +30,6 @@ use Xpress\Domain\Model\Entity\TraitUser;
  * @version  1.0.0
  */
 
-class BillingMethod extends AbstractEntity {
+class ShippingEntity extends AbstractEntity {
     use TraitTimestamp;
-    use TraitUser;
-
-    /**
-     * @var string
-     */
-    protected $name;
-
-    /**
-     * @param string $name
-     * @return string
-     */
-    public function setName ( string $name ) : string {
-        $this->name = $name;
-        return $name;
-    }
-
-    /**
-     * @return string
-     */
-    public function getName () : self {
-        return $this->name;
-    }
 }
-
-/** EOF */
