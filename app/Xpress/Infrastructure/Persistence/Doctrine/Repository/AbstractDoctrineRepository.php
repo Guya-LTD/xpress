@@ -21,7 +21,7 @@ use Xpress\Domain\Service\Repository\RepositoryInterface;
 use Doctrine\ORM\EntityManager;
 
 /**
- * Interface BillingMethodInterface
+ * Abstract AbstractDoctrineRepository
  * @package Xpress\Domain\Service\Repository
  * @see https://github.com/Simonbelete/guya/tree/develop/xpress
  * @author Simon Belete <simonbelete@gmail.com> 
