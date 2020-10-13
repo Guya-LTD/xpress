@@ -46,19 +46,30 @@ class Price extends AbstractEntity {
     protected $description;
 
     /**
+     * Holds Max weight
+     * 
      * @var float
      */
     protected $weight;
 
     /**
+     * Holds Max Size
+     * 
      * @var float
      */
     protected $size;
 
     /**
+     * Price per unit
+     * 
      * @var float
      */
     protected $price;
+
+    /**
+     * @var string
+     */
+    protected $unit;
 
     /**
      * @param string $name
@@ -100,8 +111,17 @@ class Price extends AbstractEntity {
      * @param float $price
      * @return $this
      */
-    public function setPrice ( string $price ) : self {
+    public function setPrice ( float $price ) : self {
         $this->price = $price;
+        return $this;
+    }
+
+    /**
+     * @param string $unit
+     * @return $this
+     */
+    public function setUnit( string $unit ) : self {
+        $this->unit = $unit;
         return $this;
     }
 
@@ -138,6 +158,13 @@ class Price extends AbstractEntity {
      */
     public function getPrice () : string {
         return $this->price;
+    }
+
+    /**
+     * @return string
+     */
+    public function getUnit () : string {
+        return $this->unit;
     }
 }
 
