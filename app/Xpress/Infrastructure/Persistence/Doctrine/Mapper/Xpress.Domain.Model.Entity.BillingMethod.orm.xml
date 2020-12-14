@@ -5,5 +5,10 @@
 
     <entity name="Xpress\Domain\Model\Entity\BillingMethod" table="billing_methods">
 
+        <id name="id" type="integer" column="id">
+            <generator strategy="AUTO"/>
+            <sequence-generator sequence-name="tablename_seq" allocation-size="100" initial-value="1" />
+        </id>
+
     </entity>
 </doctrine-mapping>
