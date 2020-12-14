@@ -38,12 +38,22 @@ class Price extends AbstractEntity {
     /**
      * @var string
      */
-    protected $name;
+    protected $name_en;
 
     /**
      * @var string
      */
-    protected $description;
+    protected $name_am;
+
+    /**
+     * @var string
+     */
+    protected $description_en;
+
+    /**
+     * @var string
+     */
+    protected $description_am;
 
     /**
      * Holds Max weight
@@ -53,11 +63,19 @@ class Price extends AbstractEntity {
     protected $weight;
 
     /**
-     * Holds Max Size
-     * 
      * @var float
      */
-    protected $size;
+    protected $length;
+
+    /**
+     * @var float
+     */
+    protected $width;
+
+    /**
+     * @var float
+     */
+    protected $height;
 
     /**
      * Price per unit
@@ -72,20 +90,38 @@ class Price extends AbstractEntity {
     protected $unit;
 
     /**
-     * @param string $name
+     * @param string $name_en
      * @return $this
      */
-    public function setName ( string $name ) : self {
-        $this->name = $name;
+    public function setNameEN ( string $name_en ) : self {
+        $this->name_en = $name_en;
         return $this;
     }
 
     /**
-     * @param string $description
+     * @param string $name_am
      * @return $this
      */
-    public function setDescription ( string $description ) : self {
-        $this->description = $description;
+    public function setNameAM ( string $name_am ) : self {
+        $this->name_am = $name_am;
+        return $this;
+    }
+
+    /**
+     * @param string $description_en
+     * @return $this
+     */
+    public function setDescriptionEN ( string $description_en ) : self {
+        $this->description_en = $description_en;
+        return $this;
+    }
+
+    /**
+     * @param string $description_am
+     * @return $this
+     */
+    public function setDescriptionAM ( string $description_am ) : self {
+        $this->description_am = $description_am;
         return $this;
     }
 
@@ -99,13 +135,32 @@ class Price extends AbstractEntity {
     }
 
     /**
-     * @param float $size
+     * @param float $length
      * @return $this
      */
-    public function setSize ( string $size ) : self {
-        $this->size = $size;
+    public function setLength ( float $length ) : self {
+        $this->length = $length;
         return $this;
     }
+
+    /**
+     * @param float $width
+     * @return $this
+     */
+    public function setWidth ( float $width ) : self {
+        $this->width = $widht;
+        return $this;
+    }
+
+    /**
+     * @param float $height
+     * @return $this
+     */
+    public function setHeight ( float $height ) : self {
+        $this->height = $height;
+        return $this;
+    }
+
 
     /**
      * @param float $price
@@ -128,15 +183,29 @@ class Price extends AbstractEntity {
     /**
      * @return string
      */
-    public function getName () : string {
-        return $this->name;
+    public function getNameEN () : string {
+        return $this->name_en;
     }
 
     /**
      * @return string
      */
-    public function getDescription () : string {
-        return $this->description;
+    public function getNameAM () : string {
+        return $this->name_am;
+    }
+
+    /**
+     * @return string
+     */
+    public function getDescriptionEN () : string {
+        return $this->description_en;
+    }
+
+    /**
+     * @return string
+     */
+    public function getDescriptionAM () : string {
+        return $this->description_am;
     }
 
     /**
@@ -151,6 +220,27 @@ class Price extends AbstractEntity {
      */
     public function getSize () : string {
         return $this->size;
+    }
+
+    /**
+     * @return float
+     */
+    public function getLength () : string {
+        return $this->length;
+    }
+
+    /**
+     * @return float
+     */
+    public function getWidth () : string {
+        return $this->width;
+    }
+
+    /**
+     * @return float
+     */
+    public function getHeight () : string {
+        return $this->height;
     }
 
     /**
