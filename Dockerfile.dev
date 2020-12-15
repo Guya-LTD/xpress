@@ -2,6 +2,8 @@
 
 FROM php:8.0.0rc1-alpine AS development
 
+RUN docker-php-ext-install mysqli pdo pdo_mysql && docker-php-ext-enable pdo_mysql
+
 # Create app directory
 ENV WORK_DIR /usr/src/app
 WORKDIR ${WORK_DIR}
