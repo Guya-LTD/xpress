@@ -20,8 +20,11 @@ namespace Xpress\Domain\Model\Entity;
 use Xpress\Domain\Model\Entity\AbstractEntity;
 use Xpress\Domain\Model\Entity\TraitTimestamp;
 use Xpress\Domain\Model\Entity\TraitUser;
+use Xpress\Infrastructure\Persistence\Doctrine\Repository\PriceRepository;
+use Doctrine\ORM\Mapping as ORM;
 
 /**
+ * @ORM\Entity(repositoryClass=PriceRepository::class)
  * Class PriceEntity
  * @package Xpress\Domain\Model\Entity
  * @see https://github.com/Simonbelete/guya/tree/develop/xpress
@@ -36,26 +39,31 @@ class Price extends AbstractEntity {
     use TraitUser;
     
     /**
+     * @ORM\Column(type="string")
      * @var string
      */
     protected $name_en;
 
     /**
+     * @ORM\Column(type="string")
      * @var string
      */
     protected $name_am;
 
     /**
+     * @ORM\Column(type="text")
      * @var string
      */
     protected $description_en;
 
     /**
+     * @ORM\Column(type="text")
      * @var string
      */
     protected $description_am;
 
     /**
+     * @ORM\Column(type="float")
      * Holds Max weight
      * 
      * @var float
@@ -63,21 +71,25 @@ class Price extends AbstractEntity {
     protected $weight;
 
     /**
+     * @ORM\Column(type="float")
      * @var float
      */
     protected $length;
 
     /**
+     * @ORM\Column(type="float")
      * @var float
      */
     protected $width;
 
     /**
+     * @ORM\Column(type="float")
      * @var float
      */
     protected $height;
 
     /**
+     * @ORM\Column(type="float")
      * Price per unit
      * 
      * @var float
@@ -85,9 +97,10 @@ class Price extends AbstractEntity {
     protected $price;
 
     /**
+     * @ORM\Column(type="string")
      * @var string
      */
-    protected $unit;
+    //protected $unit;
 
     /**
      * @param string $name_en
@@ -175,10 +188,10 @@ class Price extends AbstractEntity {
      * @param string $unit
      * @return $this
      */
-    public function setUnit( string $unit ) : self {
+    /*public function setUnit( string $unit ) : self {
         $this->unit = $unit;
         return $this;
-    }
+    }*/
 
     /**
      * @return string
@@ -253,9 +266,9 @@ class Price extends AbstractEntity {
     /**
      * @return string
      */
-    public function getUnit () : string {
+    /*public function getUnit () : string {
         return $this->unit;
-    }
+    }*/
 }
 
 

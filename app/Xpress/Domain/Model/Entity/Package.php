@@ -22,7 +22,7 @@ use Xpress\Domain\Model\Entity\TraitTimestamp;
 use Xpress\Domain\Model\Entity\TraitUser;
 
 /**
- * Class VehicleEntity
+ * Class PackageEntity
  * @package Xpress\Domain\Model\Entity
  * @see https://github.com/Simonbelete/guya/tree/develop/xpress
  * @author Simon Belete <simonbelete@gmail.com> 
@@ -31,7 +31,7 @@ use Xpress\Domain\Model\Entity\TraitUser;
  * @version  1.0.0
  */
 
-class Vehicle extends AbstractEntity {
+class Package extends AbstractEntity {
     use TraitTimestamp;
     //use TraitUser;
 

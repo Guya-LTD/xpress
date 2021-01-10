@@ -30,6 +30,6 @@ use Xpress\Domain\Model\Entity\TraitTimestamp;
  * @version  1.0.0
  */
 
-class ShippingEntity extends AbstractEntity {
+class Shipping extends AbstractEntity {
     use TraitTimestamp;
 }

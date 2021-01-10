@@ -15,43 +15,24 @@
  * @last modified time: 2020-05-13T04:32:15+03:00
  */
 
-namespace Xpress\Domain\Model\Entity;
+namespace Xpress\Infrastructure\Persistence\Doctrine\Repository;
 
-use Doctrine\ORM\Mapping as ORM;
+use Xpress\Infrastructure\Persistence\Doctrine\Repository\AbstractDoctrineRepository;
+use Xpress\Domain\Service\Repository\BillingMethodInterface;
 
 /**
- * Class AbstractEntity
- * @package Xpress\Domain\Model\Entity
+ * Abstract AbstractDoctrineRepository
+ * @package Xpress\Domain\Service\Repository
  * @see https://github.com/Simonbelete/guya/tree/develop/xpress
  * @author Simon Belete <simonbelete@gmail.com> 
  * @license UNLICENSED
  * @copyright (C) Guya
  * @version  1.0.0
  */
-abstract class AbstractEntity {
-	/**
-	 * @ORM\Id()
-     * @ORM\GeneratedValue()
-     * @ORM\Column(type="integer")
-	 * @var int
-	 */
-	protected $id;
 
-	/**
-	 * @param int $id
-	 * @return $this 
-	 */
-	public function setId( int $id ) : self {
-		$this->id = $id;
-		return $this;
-	}
-
-	/**
-	 * @return int
-	 */
-	public function getId() : int {
-		return $this->id;
-	}
+class PriceRepository extends AbstractDoctrineRepository implements BillingMethodInterface {
+    /**
+     * @var string
+     */
+    protected $entityClass = 'Xpress\Domain\Model\Entity\Price';
 }
-
-/** EOF **/
